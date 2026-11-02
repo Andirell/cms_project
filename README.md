@@ -54,13 +54,3 @@ cd frontend && npm run build
 ```
 
 API docs are at `/api/docs/` while the backend is running.
-
-## Before going live
-
-- Set `DJANGO_DEBUG=False`, a new `DJANGO_SECRET_KEY`, `DJANGO_ALLOWED_HOSTS` and `CORS_ALLOWED_ORIGINS`.
-- Set `NUM_PROXIES` to the number of proxies in front of Django, or rate limits will count the proxy instead of each visitor.
-- Use a production database instead of SQLite.
-- Serve static files (Django admin's styles need `collectstatic` and a web server or WhiteNoise).
-- Set `USE_CLOUDINARY=True`, or otherwise serve uploads, because Django only serves `/media/` in debug mode.
-- Set `NUM_PROXIES` and `CSRF_TRUSTED_ORIGINS` if a proxy handles HTTPS, so Django can tell the request is secure.
-- Add a shared cache such as Redis (`CACHES`). Rate-limit counters are kept per server process by default, so with several workers the real limits are higher.
