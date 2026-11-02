@@ -1,0 +1,10 @@
+.DS_Store
+*.sqlite3
+*.py[cod]
+__pycache__/
+.env
+media/
+venv/
+staticfiles/
+.claude/
+CLAUDE.md
